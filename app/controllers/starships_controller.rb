@@ -12,11 +12,8 @@ class StarshipsController < ApplicationController
   end
 
   def create
-    @starship = Starship.new({
-      name: params["starship"]["name"],
-      ship_class: params["starship"]["ship_class"],
-      location: params["starship"]["location"]
-    })
+    binding.pry
+    @starship = Starship.new(starship_params)
 
     if @starship.save
       # redirect_to '/starships/#{@starship.id}'
@@ -30,7 +27,7 @@ class StarshipsController < ApplicationController
 
   private
 
-  # def starship_params
-  #
-  # end
+  def starship_params
+    params.require("starship").permit([:name, :ship_class, :location])
+  end
 end
