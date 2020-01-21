@@ -1,0 +1,14 @@
+<h1>New Starship</h1>
+
+<%= form_for(@starship) do |field| %>
+  <%= field.label :name %>
+  <%= field.text_field :name %>
+
+  <%= field.label :ship_class, "Class" %>
+  <%= field.text_field :ship_class %>
+
+  <%= field.label :location %>
+  <%= field.text_field :location %>
+
+  <%= field.submit %>
+<% end %>
