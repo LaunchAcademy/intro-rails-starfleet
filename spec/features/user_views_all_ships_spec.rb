@@ -13,7 +13,7 @@ feature "User views all ships" do
       visit '/starships'
     end
 
-    scenario "displays all the campers" do
+    scenario "displays all the starships" do
       expect(page).to have_content("All Starships:")
       expect(page).to have_content(ship_1.name)
       expect(page).to have_content(ship_2.name)
@@ -25,7 +25,7 @@ feature "User views all ships" do
       visit '/'
     end
 
-    scenario "displays all the campers" do
+    scenario "displays all the starships" do
       expect(page).to have_content("All Starships:")
       expect(page).to have_content(ship_1.name)
       expect(page).to have_content(ship_2.name)
