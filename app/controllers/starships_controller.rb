@@ -1,40 +1,33 @@
 class StarshipsController < ApplicationController
-  def new
-    @starship = Starship.new
-  end
-
-  def create
-    binding.pry
-
-    # @starship = Starship.new({
-    #   name: params["starship"]["name"],
-    #   ship_class: params["starship"]["ship_class"],
-    #   location: params["starship"]["location"]
-    # })
-
-    @starship = Starship.new(starship_params)
-
-    if @starship.save
-      redirect_to @starship
-      # redirect_to starship_path(@starship)
-      # redirect_to starship_path(@starship.id)
-      # redirect_to '/starships/#{@starship.id}'
-    else
-      render :new
-    end
-  end
-
   def index
     @starships = Starship.all
   end
 
   def show
     @starship = Starship.find(params[:id])
+    @crew_members = @starship.crew_members
   end
+
+  def new
+    @starship = Starship.new
+  end
+
+  def create
+    @starship = Starship.new(starship_params)
+    if @starship.save
+      flash[:notice] = "New starship created"
+      redirect_to @starship
+    else
+      flash.now[:error] = @starship.errors.full_messages.to_sentence
+      # flash.now[:error] = @starship.errors.full_messages.join(", ")
+      render :new
+    end
+  end
+
 
   private
 
-  def starship_params 
-    params.require("starship").permit([:name, :ship_class, :location])
+  def starship_params
+    params.require(:starship).permit([:name, :ship_class, :location])
   end
 end
