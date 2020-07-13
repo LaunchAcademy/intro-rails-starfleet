@@ -1,0 +1,17 @@
+<h1>Enter your starship here</h1>
+
+<%= form_for(@starship) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <%= f.label :ship_class %>
+  <%= f.text_field :ship_class %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.submit %>
+<% end %>
