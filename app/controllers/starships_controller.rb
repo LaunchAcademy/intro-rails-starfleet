@@ -6,6 +6,8 @@ class StarshipsController < ApplicationController
   def show
     # binding.pry
     @starship = Starship.find(params["id"])
+
+    @crew_members = @starship.crew_members
   end
 
   def new

@@ -1,3 +1,17 @@
+<h1>Starship Details </h1>
+
 <p><%= @starship.name %></p>
 <p><%= @starship.ship_class %></p>
 <p><%= @starship.location %></p>
+
+<hr>
+
+<h3>Crew Members for this starship </h3>
+
+<% @crew_members.each do |member| %>
+  <li>
+    <%= member.first_name %>
+  </li>
+<% end %>
+
+<%= link_to 'Add New Crew Member', new_starship_crew_member_path(@starship) %>
