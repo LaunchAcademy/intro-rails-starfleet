@@ -1,0 +1,17 @@
+<h2>Add a New Crewmember to the <%= @starship.name %></h2>
+
+<%= form_for([@starship, @crew_member]) do |f| %>
+  <%= f.label :first_name, "Given Name"%> 
+  <%= f.text_field :first_name %>
+  <br>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  <br>
+  <%= f.label :specialty_division %>
+  <%= f.text_field :specialty_division %>
+
+  <br>
+
+  <%= f.submit "Add New Crew Member" %>
+
+<% end %>
