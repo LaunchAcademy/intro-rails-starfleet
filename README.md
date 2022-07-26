@@ -1,24 +1,5 @@
-# README
+# Starship Starfleet
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The goal of this clinic is to do test-/error-driven development of a very basic Rails app. Tests have been provided to focus on the weekend's concepts.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If you have time (which is probable), introduce Rails forms, which they'll read about that evening. Set up a simple form to add a new starship, including the new and create actions. If time allows, talk about strong params.
