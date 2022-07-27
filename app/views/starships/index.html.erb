@@ -1,5 +1,9 @@
 <h1>All Starships:</h1>
 
 <% @starships.each do |starship| %>
-  <h3><%= starship.name %></h3>
+  <li>
+    <%= link_to(starship.name, starship_path(starship)) %>
+  </li>
 <% end %>
+
+<%= link_to 'Create New Starship', new_starship_path %>

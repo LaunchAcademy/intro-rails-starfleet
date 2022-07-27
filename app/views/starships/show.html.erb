@@ -1,3 +1,29 @@
 <h1><%= @starship.name %></h1>
 <p><%= @starship.ship_class %></p>
 <p><%= @starship.location %></p>
+
+
+<% @starship.crew_members.each do |member| %>
+    <li>
+        <%= member.first_name %>
+    </li>
+
+<% end %>
+
+<hr>
+
+<h3>Add New Crew Member</h3>
+
+<%= form_for([@starship, @crew_member]) do |f| %>
+    
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+
+    <%= f.label :specialty_division %>
+    <%= f.text_field :specialty_division %>
+
+    <%= f.submit "Add Crew to Starship" %>
+<% end %>
