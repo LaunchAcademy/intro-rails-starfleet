@@ -2,3 +2,19 @@
 
 <p>Ship class: <%= @starship.ship_class %> </p>
 <p>Location: <%= @starship.location %> </p>
+
+<%= form_for([@starship, @member]) do |f| %>
+  <%= f.label :name, "Crew  Member Name:" %>
+  <%= f.text_field :name %>
+
+  <%= f.submit %>
+<% end %>
+
+
+<h3>Members:</h3>
+
+<ul>
+  <% @members.each do |member| %>
+    <li> <%= member.name %> </li>
+  <% end %>
+</ul>
